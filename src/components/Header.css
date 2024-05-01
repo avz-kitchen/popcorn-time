@@ -1,0 +1,18 @@
+.Header{
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.Header h1{
+    color: green;
+}
+.Header nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+.Header a{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
