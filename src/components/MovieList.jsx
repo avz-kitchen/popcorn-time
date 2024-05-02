@@ -21,15 +21,9 @@ function MovieList() {
 
     setMoviesToDisplay(newList);
   };
-  let title;
-  if (moviesToDisplay.length > 0) {
-    title = <h1>Number of movies: {moviesToDisplay.length}</h1>;
-  } else {
-    title = <h1>Sorry, no movies to display</h1>;
-  }
+
   return (
     <section className="MovieList">
-      {title}
 
       {moviesToDisplay.map((movieObj) => {
         return (

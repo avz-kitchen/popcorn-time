@@ -1,18 +1,37 @@
+:root{
+    --denim-600 : #558DB5;
+    --link :#488E8D;
+    --rustor-500: #9D6284;
+    --sunny: #EAB51C;
+}
 .Header{
     padding: 1rem;
     margin-bottom: 2rem;
 }
 .Header h1{
-    color:rgb(164, 54, 14);
+    color:var(--sunny);
+    font-weight: 800;
+    font-size: 12em;
+    text-align: left;
+    text-transform: uppercase;
+    -webkit-text-stroke: 4px var(--rustor-500);
+
 }
 .Header nav{
     display: flex;
     justify-content: center;
+    justify-content: flex-start;
+
+
 }
 
 
 .Header a{
     display: flex;
     justify-content: center;
-    color: red;
+    padding: 12px;
+    color: var(--link);
+    font-size: 24px;
+    font-weight: g00;
+
 }
