@@ -5,7 +5,7 @@
     --sunny: #EAB51C;
 }
 .Header{
-    padding: 1rem;
+    padding: 0.5rem;
     margin-bottom: 2rem;
 }
 .Header h1{
@@ -21,8 +21,6 @@
     display: flex;
     justify-content: center;
     justify-content: flex-start;
-
-
 }
 
 
@@ -32,6 +30,9 @@
     padding: 12px;
     color: var(--link);
     font-size: 24px;
-    font-weight: g00;
+    font-weight: 600;
 
+}
+.Header img {
+    width: 10%;
 }
