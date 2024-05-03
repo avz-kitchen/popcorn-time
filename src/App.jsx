@@ -14,7 +14,7 @@ function App() {
   const [moviesToDisplay, setMoviesToDisplay] = useState(movies);
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState("");
-  const [imgUrl, setImgUrl] = useState();
+  const [image, setImage] = useState();
 
   const deleteMovie = (movieId) => {
     console.log(`deleting movie with the id... ${movieId}`);
@@ -39,22 +39,28 @@ function App() {
       title: title,
       year: 2001,
       rating: rating,
-      imgUrl: imgUrl,
+      imgUrl: image,
     };
     const newList = [newMovie, ...moviesToDisplay];
 
     setMoviesToDisplay(newList)
   };
+  const onImageChange = (e) => {
+    if (e.target.files && event.target.files[0]) {
+      setImage(URL.createObjectURL(e.target.files[0]));
+    }
+   }
   return (
     <>
       <Header />
       <section >
         <h2>Create your own movie</h2>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label> Title:
             <input
               type="text"
               name='title'
+              required
               placeholder='Enter the title'
               value={title}
               onChange={(e) => {
@@ -63,9 +69,12 @@ function App() {
             />
             
           </label>
-          <label>
+          <label> Rating
             <input
               type="number"
+              required
+              min={1}
+              max={10}
               name='Rating'
               placeholder='Rate 1-10'
               value={rating}
@@ -75,16 +84,10 @@ function App() {
             />
           </label>
           <label>
-            <input
-              type="image"
-             id='image'
-             alt='Add image'
-              src={imgUrl}
-              onChange={(e) => {
-                setImgUrl(URL.createObjectURL(e.target.files[0]));
-              }}
-            />
+          <input type="file" onChange={onImageChange} className="filetype" />
+    <img alt="preview image" src={image}/>
           </label>
+
           <p>
           <button>Create</button>
         </p>
