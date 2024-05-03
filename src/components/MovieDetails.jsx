@@ -1,35 +1,36 @@
-/* eslint-disable react/jsx-key */
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 
 import moviesArr from "../data/movies.json";
 
-function MovieDetails() {
-  const { movieId } = useParams();
+function MovieDetails(){
 
-  const movie = moviesArr.find((movieObj) => movieObj.id === parseInt(movieId));
+    const {movieId} = useParams();
 
-  return (
-    <div className="MovieDetails card">
-      <h3>{movie.title}</h3>
+    const movie = moviesArr.find( (movieObj) => movieObj.id === parseInt(movieId));
 
-      {movie.imgURL ? (
-        <img src={movie.imgURL} />
-      ) : (
-        <img src="https://dummyimage.com/182x268/ffffff/000000" />
-      )}
+    return (
+        <div className='MovieDetails'>
 
-      <p>Year: {movie.year}</p>
-      <p>Rating: {movie.rating}</p>
+            <h1>{movie.title}</h1>
 
-      <div>
-        {movie.genres &&
-          movie.genres.map((genre) => <span className="badge">{genre}</span>)}
-      </div>
-      <p>
-        <Link to="/">Back to Homepage</Link>
-      </p>
-    </div>
-  );
+            {movie.imgURL
+                ? <img src={movie.imgURL} />
+                : <img src="https://dummyimage.com/182x268/ffffff/000000" />
+            }
+
+            <p>Year: {movie.year}</p>
+            <p>Rating: {movie.rating}</p>
+            
+            <div>
+                { movie.genres && movie.genres.map( genre => <span className='badge'>{genre}</span> )}
+            </div>
+
+            <p>
+                <Link to="/">Back to Homepage</Link>
+            </p>
+
+        </div>
+    );
 }
 
 export default MovieDetails;

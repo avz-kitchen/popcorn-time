@@ -4,26 +4,13 @@
 import { useState } from "react";
 import movies from "../data/movies.json";
 import MovieSummary from "./MovieSummary";
+
+
 function MovieList(props) {
   console.log(movies);
 
 
-  const deleteMovie = (movieId) => {
-    console.log(`deleting movie with the id... ${movieId}`);
-
-    const newList = moviesToDisplay.filter((movie) => movie.id !== movieId);
-
-  //   //   if (movie.id === movieId) {
-  //   //     return false;
-  //   //   } else {
-  //   //     return true;
-  //   //   }
-
-  //   console.log(newList);
-
-    setMoviesToDisplay(newList);
-  };
-
+ 
   return (
     <section className="MovieList">
 
@@ -32,8 +19,8 @@ function MovieList(props) {
           <MovieSummary
             key={movieObj.id}
             movieDetails={movieObj}
-            callbackToDelete={deleteMovie}
-          />
+            callbackToDelete={props.callbackToDelete}
+            />
         );
       })}
     </section>
