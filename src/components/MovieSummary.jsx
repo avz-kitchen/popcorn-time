@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-function Movie(props) {
+function MovieSummary(props) {
   return (
     <div className="card" key={props.movieDetails.id}>
     {props.movieDetails.imgURL
@@ -20,4 +20,4 @@ function Movie(props) {
   );
 }
 
-export default Movie;
+export default MovieSummary;
