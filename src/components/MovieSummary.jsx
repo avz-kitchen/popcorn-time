@@ -15,7 +15,7 @@ function MovieSummary(props) {
 
     <Link to={`/movies/${props.movieDetails.id}`}>More details</Link>
 
-    <button onClick={() => { props.callbackToDelete(props.movieDetails.id) }}>Delete</button>
+    <button className="btn btn-primary" onClick={() => { props.callbackToDelete(props.movieDetails.id) }}>Delete</button>
 </div>
   );
 }

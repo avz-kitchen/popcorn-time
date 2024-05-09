@@ -34,8 +34,11 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("user has submitted the form");
-
+    const movieIds = moviesToDisplay.map( movie => movie.id);
+    const maxId = Math.max(...movieIds);
+    const nextId = maxId + 1;
     const newMovie = {
+      id: nextId,
       title: title,
       year: 2001,
       rating: rating,
@@ -107,7 +110,7 @@ function App() {
         />
         <Route path="/about" element={<p>this is the about page</p>} />
         <Route path="/contact" element={<p>this is the contact page</p>} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="/movies/:movieId" element={<MovieDetails moviesToDisplay={moviesToDisplay} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
